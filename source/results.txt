@@ -1,0 +1,6 @@
+array length: 1000
+bubble: 38001us, insertion_sort: 17996us, quicksort: 1013us
+array length: 10000
+bubble: 101752us, insertion_sort: 840233us, quicksort: 10999us
+array length: 100000
+bubble: 931132us, insertion_sort: 286491us, quicksort: 136507us

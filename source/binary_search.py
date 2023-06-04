@@ -27,7 +27,7 @@ def count_higher(arr: List[int], limit_val: int, min_count: int) -> bool:
 def find_x(p, q):
     if p >= q:  # q is at least p+1
         return None
-    maximum = int(math.pow(q, 1/3))
+    maximum = int(math.pow(q, 1/3))  # q ** (1/3)
 
     candidates = list(range(1, maximum+1))
     left = 0

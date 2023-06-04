@@ -15,7 +15,19 @@ def is_vowel(x: str) -> bool:
     return x in ('a', 'e', 'i', 'o', 'u')
 
 
+#  REKURENCJA!!
 def count_vowels(text: str) -> Dict:
+    freq = {}
+    for char in text:
+        if is_vowel(char):
+            if char in freq.keys():
+                freq[char] += 1
+            else:
+                freq[char] = 1
+    return freq
+
+
+def count_vowels_iter(text: str) -> Dict:
     freq = {}
     for char in text:
         if is_vowel(char):
