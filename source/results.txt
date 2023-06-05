@@ -1,6 +1,6 @@
 array length: 1000
-bubble: 38001us, insertion_sort: 17996us, quicksort: 1013us
+bubble: 43481us, insertion_sort: 26453us, quicksort: 1076us, merge_sort: 2934us
 array length: 10000
-bubble: 101752us, insertion_sort: 840233us, quicksort: 10999us
-array length: 100000
-bubble: 931132us, insertion_sort: 286491us, quicksort: 136507us
+bubble: 590794us, insertion_sort: 445386us, quicksort: 10983us, merge_sort: 23322us
+array length: 20000
+bubble: 783621us, insertion_sort: 692034us, quicksort: 27522us, merge_sort: 50185us

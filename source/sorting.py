@@ -44,6 +44,35 @@ def quicksort(array: list):
     quicksort_step(array, 0, len(array) - 1)
 
 
+def merge(array, start, middle, end):
+    array1 = array[start:middle+1]
+    array2 = array[middle+1:end+1]
+    index = start
+    while array1 and array2:
+        if array1[0] < array2[0]:
+            array[index] = array1.pop(0)
+        else:
+            array[index] = array2.pop(0)
+        index += 1
+    rest = array1 + array2
+    for element in rest:
+        array[index] = element
+        index += 1
+
+
+def merge_sort_step(array: list, start: int, end: int):
+    if end <= start:
+        return
+    middle = (start+end) // 2
+    merge_sort_step(array, start, middle)
+    merge_sort_step(array, middle+1, end)
+    merge(array, start, middle, end)
+
+
+def merge_sort(array: list):
+    merge_sort_step(array, 0, len(array)-1)
+
+
 def insertion_sort(array: list):
     n = len(array)
     for i in range(1, n):
@@ -81,8 +110,8 @@ def write_results(results: dict):
 
 
 if __name__ == "__main__":
-    LENGTHS = [1000, 10000, 100000]
-    FUNCTIONS = [bubble, insertion_sort, quicksort]
+    LENGTHS = [1000, 10000, 20000]
+    FUNCTIONS = [bubble, insertion_sort, quicksort, merge_sort]
 
     results = {}
     for length in LENGTHS:
