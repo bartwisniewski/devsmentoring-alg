@@ -13,3 +13,9 @@ def test_should_return_dict():
     test_string = 'baadace'
     result = count_vowels(test_string)
     assert type(result) == dict
+
+
+def test_should_empty_dict_for_empty_string_input():
+    test_string = ''
+    result = count_vowels(test_string)
+    assert result == {}

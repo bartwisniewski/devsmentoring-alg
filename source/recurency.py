@@ -15,16 +15,16 @@ def is_vowel(x: str) -> bool:
     return x in ('a', 'e', 'i', 'o', 'u')
 
 
-#  REKURENCJA!!
-def count_vowels(text: str) -> Dict:
-    freq = {}
-    for char in text:
-        if is_vowel(char):
-            if char in freq.keys():
-                freq[char] += 1
-            else:
-                freq[char] = 1
-    return freq
+def count_vowels_recurency(text: str, freq: dict):
+    if not text:
+        return
+    char = text[0]
+    if is_vowel(char):
+        if char in freq.keys():
+            freq[char] += 1
+        else:
+            freq[char] = 1
+    count_vowels_recurency(text[1:], freq)
 
 
 def count_vowels_iter(text: str) -> Dict:
@@ -35,6 +35,12 @@ def count_vowels_iter(text: str) -> Dict:
                 freq[char] += 1
             else:
                 freq[char] = 1
+    return freq
+
+
+def count_vowels(text: str = "") -> dict:
+    freq = {}
+    count_vowels_recurency(text, freq)
     return freq
 
 
@@ -90,4 +96,6 @@ def nww_user():
 
 
 if __name__ == "__main__":
-    nww_user()
+    _input = "aeoiudsamkjdskewqdsa"
+    result = count_vowels(_input)
+    print(result)

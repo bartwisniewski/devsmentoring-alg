@@ -97,8 +97,8 @@ def make_a_list(n: int, limit: int):
 if __name__ == "__main__":
     inputs = make_a_list(40, 20)
     print(inputs)
-    myList = LinkedList()
+    my_list = LinkedList()
     for _input in inputs:
-        myList.append(_input)
-    myList.clean()
-    print(myList)
+        my_list.append(_input)
+    my_list.clean()
+    print(my_list)
